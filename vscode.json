@@ -1,0 +1,132 @@
+{
+  //editor
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.lineHeight": 1.5,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.accessibilitySupport": "on",
+  "window.zoomLevel": 2,
+  "explorer.confirmDelete": false, //删除文件不询问
+  //files
+  "files.associations": {
+    "*.wxss": "css",
+    "*.wxs": "javascript",
+    "*.jsonc": "json"
+  },
+  "files.autoSave": "afterDelay",
+  //emmet
+  "emmet.includeLanguages": {
+    "wxml": "html",
+    "wxss": "css"
+  },
+  // typescript
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  // terminal
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.profiles.windows": {
+    "GitBash": {
+      "path": "D:\\Program Files\\Git\\bin\\bash.exe"
+    }
+  },
+  // dprint
+  "dprint.path": "C:\\Users\\missa\\.dprint\\bin\\dprint.exe",
+  //  per language
+  "[typescript]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dprint.dprint"
+    // "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  // Path Autocomplete
+  "path-autocomplete.pathMappings": {
+    "/": "${folder}/miniprogram/" // the absolute root folder is now /miniprogram,
+  },
+  //git
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "never",
+  "explorer.confirmDragAndDrop": false,
+  "editor.insertSpaces": false,
+  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.showToolbar": "always",
+  // tailwindCSS
+  "tailwindCSS.lint.cssConflict": "warning",
+  "tailwindCSS.includeLanguages": {
+    "wxml": "html"
+  },
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.classAttributes": [
+    "class",
+    "classes",
+    "className",
+    "hover-class",
+    "placeholder-class",
+    "classes"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "{([\\s\\S]*)}",
+      ":\\s*['\"`]([^'\"`]*)['\"`]"
+    ]
+  ],
+  // WXML(minapp-vscode) 注意若要使用提供的格式化,不能把wxml变为html,那样插件不识别不到,即不要配置 "files.associations":"{"*.wxss":"html"}"
+  "[wxml]": {
+    "editor.defaultFormatter": "qiu8310.minapp-vscode"
+  },
+  "minapp-vscode.wxmlFormatter": "prettyHtml", //指定格式化工具
+  "minapp-vscode.prettyHtml": {
+    "useTabs": true,
+    "tabWidth": 4,
+    "printWidth": 100,
+    "singleQuote": false,
+    "usePrettier": true,
+    "wrapAttributes": true, //设置成 true 强制属性换行
+    "sortAttributes": false
+  },
+  "minapp-vscode.disableAutoConfig": true,
+  "minapp-vscode.disableDecorate": false,
+  // "minapp-vscode.reserveTags": [
+  //   // 忽略格式化的标签， text标签格式化会引起换行和空格的问题
+  //   "text",
+  //   "wxs"
+  // ],
+  //  tailwind-fold
+  "tailwind-fold.autoFold": true,
+  "tailwind-fold.supportedLanguages": [ //启用扩展的语言数组
+    "wxml"
+  ],
+  "tailwind-fold.foldStyle": "QUOTES", //定义折叠样式 默认all
+  "tailwind-fold.unfoldIfLineSelected": true, //如果选择了行，则展开类属性 默认false
+  "tailwind-fold.showTailwindImage": false, //显示/隐藏折叠内容前面的顺风标志
+  // "tailwind-fold.foldedText":"...", //折叠类属性时显示的文本 默认...
+  "tailwind-fold.foldedTextColor": "#ff00ff", //折叠时文本的颜色 默认#7cdbfe7e
+  // "tailwind-fold.foldedTextBackgroundColor": "#52b7ee09", //折叠时文本的背景颜色#52b7ee09
+  // "tailwind-fold.unfoldedTextOpacity":0.9, //展开类属性的不透明度 默认1
+  // github.copilot
+  // "github.copilot.enable": {
+  //   "*": true,
+  //   "plaintext": false,
+  //   "markdown": false,
+  //   "scminput": false
+  // },
+}

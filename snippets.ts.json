@@ -1,0 +1,91 @@
+{
+	"SubComponent": {
+		"prefix": "SSS",
+		"body": [
+		  "const $1 = SubComponent<Root, $2>()({",
+		  "  $4",
+		  "});",
+		  "type Root = typeof rootComponent;"
+		],
+		"description": "构建子组件"
+	  },
+	"CloudFunction":{
+		"prefix": "cloud",
+		"body": [	
+			"import { CloudEvent } from \"../documentation\";",
+			"",
+			"const cloud: WxCloud = require(\"wx-server-sdk\");",
+			"",
+			"cloud.init();",
+			"",
+			"exports.main = async (event: CloudEvent) => {",
+			"    const wxContext = cloud.getWXContext();",
+			"",
+			"    return {",
+			"        event,",
+			"        openid: wxContext.OPENID,",
+			"        appid: wxContext.APPID,",
+			"        unionid: wxContext.UNIONID,",
+			"    };",
+			"};"
+		],
+		"description": "初始化云函数"
+
+	},
+	"Test":{
+		"prefix":"test",
+		"body": [
+			"import { load, render, sleep } from \"miniprogram-simulate\";",
+			"import path from \"path\";",
+			"const id = load(path.resolve(__dirname, \"$1\"));",
+			"const comp = render(id);",
+			"const parent = document.createElement(\"parent\");",
+			"comp.attach(parent);",
+			"const goodsItem = comp.querySelector(\"$1\");",
+			"describe(\"$2\", () => {",
+			
+			"    test(\"$3\", async () => {",
+			"        await sleep(0);",
+			"        expect(1).toBe(1);",
+			"    });",
+			"});"
+	
+		],
+		"description": "jest测试"
+	},
+	"DefinePage": {
+		"prefix": "PPP",
+		"body": [
+		  "import { DefineComponent, RootComponent } from \"annil\";",
+		  "",
+		  "const rootComponent = RootComponent()({",
+		  "  isPage: true,",
+		  "  $4",
+		  "});",
+		  "const $1 = DefineComponent({",
+		  "  path: \"/$2\",",
+		  "  rootComponent,",
+		  "  // subComponents:[]",
+		  "});",
+		  "export type $$3 = typeof $1;"
+		],
+		"description": "构建页面"
+	  },
+	  "DefineComponent": {
+		"prefix": "CCC",
+		"body": [
+		  "import { DefineComponent, RootComponent } from \"annil\";",
+		  "",
+		  "const rootComponent = RootComponent()({",
+		  "  $4",
+		  "});",
+		  "const $1 = DefineComponent({",
+		  "  name: \"$2\",",
+		  "  rootComponent,",
+		  "  // subComponents:[]",
+		  "});",
+		  "export type $3 = typeof $1;"
+		],
+		"description": "构建组件"
+	  }
+}
